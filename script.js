@@ -1,9 +1,8 @@
-const seal = document.getElementById("seal");
+const form = document.getElementById("signupForm");
 
-const envelope = document.getElementById("envelope");
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-seal.addEventListener("click", () => {
-
-envelope.classList.add("open");
-
+  alert("Your wedding invitation request has been submitted successfully!");
+  form.reset();
 });
