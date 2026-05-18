@@ -1,95 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wedding Invitation</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation Signup</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<div class="bg"></div>
+  <section class="hero">
+    <div class="overlay"></div>
 
-<div class="sparkles"></div>
+    <div class="card">
+      <div class="badge">Rose Gold Blush</div>
 
-<div class="main-container">
+      <h1>Create Your Wedding Invitation Webpage</h1>
+      <p>
+        Design a beautiful digital wedding invitation with countdown,
+        RSVP, venue map, music and elegant animations.
+      </p>
 
-<div class="envelope-wrapper">
+      <form id="signupForm">
+        <input type="text" placeholder="Bride Name" required />
+        <input type="text" placeholder="Groom Name" required />
+        <input type="date" required />
+        <input type="text" placeholder="Venue Name" required />
+        <input type="email" placeholder="Your Email" required />
 
-<div class="envelope" id="envelope">
+        <button type="submit">Create Invitation</button>
+      </form>
 
-<div class="envelope-top"></div>
+      <p class="note">No coding required • Share with one link</p>
+    </div>
+  </section>
 
-<div class="wax-seal" id="seal">
-✦
-</div>
+  <section class="features">
+    <h2>Premium Features</h2>
 
-<div class="letter">
+    <div class="grid">
+      <div>💌 RSVP Form</div>
+      <div>⏳ Live Countdown</div>
+      <div>🎵 Background Music</div>
+      <div>📍 Google Map</div>
+      <div>🌸 Elegant Animation</div>
+      <div>📱 Mobile Friendly</div>
+    </div>
+  </section>
 
-<div class="invite">
-
-<h3>The Wedding Celebration Of</h3>
-
-<h1>
-MEERAB NADEEM
-<span>&</span>
-MOHSIN AJMAL KHAN
-</h1>
-
-<div class="line"></div>
-
-<p class="invite-text">
-Together with their families,
-request the honour of your presence
-at their wedding celebration
-</p>
-
-<div class="details">
-
-<p>Friday</p>
-
-<h2>5 JUNE 2026</h2>
-
-<p>8:00 PM</p>
-
-</div>
-
-<div class="venue">
-
-<h4>Venue</h4>
-
-<p>
-Pearl Grand Marquee
-Karachi, Pakistan
-</p>
-
-</div>
-
-<div class="footer-text">
-Dinner & Reception To Follow
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
