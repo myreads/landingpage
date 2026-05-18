@@ -9,77 +9,164 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="background">
-    <div class="blob blob-one"></div>
-    <div class="blob blob-two"></div>
-    <div class="blob blob-three"></div>
-    <div class="particles" id="particles"></div>
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_2b70a3f7b5.mp3?filename=romantic-piano-ambient-110624.mp3" type="audio/mpeg">
+  </audio>
+
+  <button class="music-btn" id="musicBtn">♪</button>
+
+  <div class="lux-bg">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+    <div class="glow glow-3"></div>
+    <div id="particles"></div>
   </div>
 
-  <main class="scene">
+  <section class="intro-screen" id="introScreen">
+    <div class="intro-content">
+      <p class="overline">A Wedding Invitation</p>
+      <h1>Meerab & Mohsin</h1>
 
-    <section class="envelope-wrap" id="envelopeWrap">
-      <div class="luxury-title">
-        <span>Wedding Invitation</span>
-        <h1>Meerab & Mohsin</h1>
+      <div class="couple-silhouette">
+        <div class="moon"></div>
+        <div class="couple">♕</div>
       </div>
 
       <div class="envelope" id="envelope">
-        <div class="envelope-back"></div>
-        <div class="letter-preview"></div>
+        <div class="letter"></div>
         <div class="flap"></div>
-        <div class="front-left"></div>
-        <div class="front-right"></div>
-
-        <button class="wax-seal" id="openBtn">
-          <span>M</span>
-        </button>
+        <div class="env-left"></div>
+        <div class="env-right"></div>
+        <button class="wax-seal" id="openInvite">M</button>
       </div>
 
-      <p class="tap-text">Tap the wax seal to open</p>
+      <p class="tap-note">Tap the wax seal to open</p>
+    </div>
+  </section>
+
+  <main class="site-content" id="siteContent">
+
+    <section class="hero section reveal">
+      <div class="floral floral-a">❦</div>
+      <div class="floral floral-b">❦</div>
+
+      <p class="overline">Together with their families</p>
+      <h2 class="script-heading">Meerab & Mohsin</h2>
+
+      <div class="lux-divider"></div>
+
+      <p class="hero-text">Request the honour of your presence</p>
+
+      <h3 class="names">
+        MEERAB NADEEM
+        <span>&</span>
+        MOHSIN AJMAL KHAN
+      </h3>
+
+      <div class="date-card">
+        <span>Friday</span>
+        <strong>5 June 2026</strong>
+        <span>8:00 PM</span>
+      </div>
+
+      <p class="hero-text">Dinner & Reception to Follow</p>
     </section>
 
-    <section class="invitation-card" id="invitationCard">
-      <div class="floral floral-top-left">❦</div>
-      <div class="floral floral-top-right">❦</div>
-      <div class="floral floral-bottom-left">❦</div>
-      <div class="floral floral-bottom-right">❦</div>
+    <section class="countdown-section section reveal">
+      <p class="overline">Counting Every Moment</p>
+      <h2>Wedding Countdown</h2>
 
-      <div class="card-inner">
-        <p class="small-text">Together with their families</p>
-
-        <div class="divider"></div>
-
-        <h2 class="bride">MEERAB NADEEM</h2>
-        <p class="and">&</p>
-        <h2 class="groom">MOHSIN AJMAL KHAN</h2>
-
-        <div class="divider short"></div>
-
-        <p class="request">
-          Request the honour of your presence
-        </p>
-
-        <div class="date-box">
-          <span>Friday</span>
-          <strong>5 June 2026</strong>
-          <span>8:00 PM</span>
-        </div>
-
-        <p class="reception">Dinner & Reception to Follow</p>
-
-        <div class="venue">
-          <h3>Venue</h3>
-          <p>Please join us for a beautiful evening of love, blessings and celebration.</p>
-        </div>
-
-        <button class="rsvp-btn">Celebrate With Us</button>
+      <div class="countdown" id="countdown">
+        <div><strong id="days">00</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
       </div>
     </section>
+
+    <section class="story-section section reveal">
+      <p class="overline">A Beautiful Beginning</p>
+      <h2 class="script-heading small">Our Story</h2>
+
+      <div class="timeline">
+        <div class="story-card">
+          <span>01</span>
+          <h3>The Beginning</h3>
+          <p>Two hearts met, and a beautiful journey of love, respect, and togetherness began.</p>
+        </div>
+
+        <div class="story-card">
+          <span>02</span>
+          <h3>The Promise</h3>
+          <p>With blessings from family and love in their hearts, they begin a new chapter together.</p>
+        </div>
+
+        <div class="story-card">
+          <span>03</span>
+          <h3>The Celebration</h3>
+          <p>Join us for an unforgettable evening filled with prayers, joy, dinner, and memories.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="venue-section section reveal">
+      <p class="overline">Wedding Venue</p>
+      <h2>Pearl Grand Marquee</h2>
+
+      <div class="venue-card">
+        <div>
+          <h3>Pearl Grand Marquee</h3>
+          <p>Karachi, Pakistan</p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Pearl+Grand+Marquee+Karachi+Pakistan" target="_blank">
+            Open in Google Maps
+          </a>
+        </div>
+
+        <div class="map-card">
+          <iframe
+            src="https://www.google.com/maps?q=Pearl%20Grand%20Marquee%20Karachi%20Pakistan&output=embed"
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section section reveal">
+      <p class="overline">Memories & Moments</p>
+      <h2 class="script-heading small">Gallery</h2>
+
+      <div class="gallery">
+        <div class="photo"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt=""></div>
+        <div class="photo tall"><img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=80" alt=""></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80" alt=""></div>
+        <div class="photo"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80" alt=""></div>
+      </div>
+    </section>
+
+    <section class="rsvp-section section reveal">
+      <p class="overline">Your Presence Is Precious</p>
+      <h2>RSVP</h2>
+
+      <form id="rsvpForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="number" placeholder="Number of Guests" required>
+        <select required>
+          <option value="">Will you attend?</option>
+          <option>Yes, I will attend</option>
+          <option>Sorry, I cannot attend</option>
+        </select>
+        <button type="submit">Send RSVP</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>MEERAB NADEEM & MOHSIN AJMAL KHAN</p>
+      <span>5 June 2026 • 8:00 PM</span>
+    </footer>
 
   </main>
 
