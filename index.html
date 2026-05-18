@@ -3,49 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wedding Invitation Signup</title>
+  <title>Meerab & Mohsin Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <section class="hero">
-    <div class="overlay"></div>
+  <div class="background">
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+    <div class="blob blob-three"></div>
+    <div class="particles" id="particles"></div>
+  </div>
 
-    <div class="card">
-      <div class="badge">Rose Gold Blush</div>
+  <main class="scene">
 
-      <h1>Create Your Wedding Invitation Webpage</h1>
-      <p>
-        Design a beautiful digital wedding invitation with countdown,
-        RSVP, venue map, music and elegant animations.
-      </p>
+    <section class="envelope-wrap" id="envelopeWrap">
+      <div class="luxury-title">
+        <span>Wedding Invitation</span>
+        <h1>Meerab & Mohsin</h1>
+      </div>
 
-      <form id="signupForm">
-        <input type="text" placeholder="Bride Name" required />
-        <input type="text" placeholder="Groom Name" required />
-        <input type="date" required />
-        <input type="text" placeholder="Venue Name" required />
-        <input type="email" placeholder="Your Email" required />
+      <div class="envelope" id="envelope">
+        <div class="envelope-back"></div>
+        <div class="letter-preview"></div>
+        <div class="flap"></div>
+        <div class="front-left"></div>
+        <div class="front-right"></div>
 
-        <button type="submit">Create Invitation</button>
-      </form>
+        <button class="wax-seal" id="openBtn">
+          <span>M</span>
+        </button>
+      </div>
 
-      <p class="note">No coding required • Share with one link</p>
-    </div>
-  </section>
+      <p class="tap-text">Tap the wax seal to open</p>
+    </section>
 
-  <section class="features">
-    <h2>Premium Features</h2>
+    <section class="invitation-card" id="invitationCard">
+      <div class="floral floral-top-left">❦</div>
+      <div class="floral floral-top-right">❦</div>
+      <div class="floral floral-bottom-left">❦</div>
+      <div class="floral floral-bottom-right">❦</div>
 
-    <div class="grid">
-      <div>💌 RSVP Form</div>
-      <div>⏳ Live Countdown</div>
-      <div>🎵 Background Music</div>
-      <div>📍 Google Map</div>
-      <div>🌸 Elegant Animation</div>
-      <div>📱 Mobile Friendly</div>
-    </div>
-  </section>
+      <div class="card-inner">
+        <p class="small-text">Together with their families</p>
+
+        <div class="divider"></div>
+
+        <h2 class="bride">MEERAB NADEEM</h2>
+        <p class="and">&</p>
+        <h2 class="groom">MOHSIN AJMAL KHAN</h2>
+
+        <div class="divider short"></div>
+
+        <p class="request">
+          Request the honour of your presence
+        </p>
+
+        <div class="date-box">
+          <span>Friday</span>
+          <strong>5 June 2026</strong>
+          <span>8:00 PM</span>
+        </div>
+
+        <p class="reception">Dinner & Reception to Follow</p>
+
+        <div class="venue">
+          <h3>Venue</h3>
+          <p>Please join us for a beautiful evening of love, blessings and celebration.</p>
+        </div>
+
+        <button class="rsvp-btn">Celebrate With Us</button>
+      </div>
+    </section>
+
+  </main>
 
   <script src="script.js"></script>
 </body>
