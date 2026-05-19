@@ -1,138 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luxury Wedding Invitation</title>
+const openBtn = document.getElementById("openInvitation");
+const openingScreen = document.getElementById("openingScreen");
+const invitation = document.getElementById("invitation");
 
-  <link rel="stylesheet" href="style.css" />
+openBtn.addEventListener("click", () => {
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  openBtn.style.transition = "all 0.8s ease";
+  openBtn.style.transform = "translate(-50%,-30%) scale(0)";
+  openBtn.style.opacity = "0";
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
+  document.querySelector(".envelope-top").style.transition = "all 1.8s ease";
+  document.querySelector(".envelope-top").style.transformOrigin = "top";
+  document.querySelector(".envelope-top").style.transform = "rotateX(180deg)";
 
-<body>
+  document.querySelector(".envelope-paper").style.transition = "all 2s ease";
+  document.querySelector(".envelope-paper").style.transform = "translateY(-120px)";
 
-  <div class="paper-texture"></div>
+  setTimeout(() => {
 
-  <div class="floating-petals">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
+    openingScreen.style.transition = "opacity 1.5s ease";
+    openingScreen.style.opacity = "0";
 
-  <!-- FLORAL FRAME -->
-  <div class="floral-frame">
+    setTimeout(() => {
 
-    <img class="top-floral sway" src="https://images.unsplash.com/photo-1520763185298-1b434c919102?q=80&w=1400&auto=format&fit=crop" />
+      openingScreen.style.display = "none";
 
-    <img class="bottom-floral sway2" src="https://images.unsplash.com/photo-1519378058457-4c29a0a2efac?q=80&w=1400&auto=format&fit=crop" />
+      invitation.classList.remove("hidden");
 
-    <img class="left-vines" src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?q=80&w=800&auto=format&fit=crop" />
+      setTimeout(() => {
+        invitation.classList.add("show");
+      }, 100);
 
-    <img class="right-vines" src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?q=80&w=800&auto=format&fit=crop" />
+    }, 1400);
 
-  </div>
+  }, 1500);
 
-  <!-- OPENING SCREEN -->
-  <section class="opening-screen" id="openingScreen">
-
-    <div class="envelope-wrapper">
-
-      <div class="envelope-shadow"></div>
-
-      <div class="envelope">
-
-        <div class="envelope-top"></div>
-
-        <div class="envelope-paper">
-
-          <h2>Wedding Invitation</h2>
-
-        </div>
-
-        <button class="wax-seal" id="openInvitation">
-          <span>M & M</span>
-        </button>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- INVITATION -->
-  <main class="invitation hidden" id="invitation">
-
-    <section class="hero">
-
-      <p class="arabic">
-        بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-      </p>
-
-      <p class="translation">
-        In the name of Allah, the Most Gracious, the Most Merciful.
-      </p>
-
-      <p class="dua">
-        May Allah bless this union with love, mercy, and barakah.
-      </p>
-
-      <div class="divider"></div>
-
-      <p class="invite-text">
-        Mr. & Mrs. Nadeem Ahmad Khan <br>
-        cordially invite you to celebrate <br>
-        the wedding of their beloved daughter
-      </p>
-
-      <h1 class="couple">
-        MEERAB NADEEM
-      </h1>
-
-      <div class="and">&</div>
-
-      <h1 class="couple second">
-        MOHSIN AJMAL KHAN
-      </h1>
-
-    </section>
-
-    <section class="details">
-
-      <div class="detail-card">
-
-        <p class="day">Friday</p>
-
-        <h2>5 June 2026</h2>
-
-        <p class="time">8:00 PM</p>
-
-      </div>
-
-      <div class="detail-card venue-card">
-
-        <h3>Venue</h3>
-
-        <p>Bambeeno Marriage Hall</p>
-
-        <a href="https://maps.app.goo.gl/rPLesYyLEMn6mbzt9" target="_blank" class="location-btn">
-          View Location
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <script src="script.js"></script>
-
-</body>
-</html>
+});
