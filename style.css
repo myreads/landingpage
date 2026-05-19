@@ -2,13 +2,13 @@
 
 :root{
 
-  --maroon:#4b1116;
-  --burgundy:#681b24;
-  --gold:#c8a57a;
-  --rose:#d7b5af;
-  --ivory:#f9f5f0;
-  --beige:#efe4d9;
-  --text:#4c3c35;
+  --maroon:#4d0f18;
+  --burgundy:#691924;
+  --gold:#c9a67d;
+  --rose:#d9b7b1;
+  --ivory:#faf5ef;
+  --beige:#efe1d4;
+  --text:#4d4038;
 
 }
 
@@ -32,8 +32,8 @@ body{
 
   background:
   linear-gradient(to bottom,
-  #faf6f1,
-  #f4ebe3);
+  #fbf7f2,
+  #f3e8dd);
 
   color:var(--text);
 
@@ -43,9 +43,9 @@ body{
 
 }
 
-/* PETALS */
+/* FLOATING PETALS */
 
-.petals{
+.petal-layer{
 
   position:fixed;
   inset:0;
@@ -55,23 +55,24 @@ body{
   z-index:1;
 
   background-image:
+
   radial-gradient(circle at 20% 30%,
-  rgba(215,181,175,.18) 2px,
+  rgba(217,183,177,.18) 2px,
   transparent 2px),
 
   radial-gradient(circle at 80% 70%,
-  rgba(200,165,122,.18) 2px,
+  rgba(201,166,125,.18) 2px,
   transparent 2px),
 
   radial-gradient(circle at 50% 90%,
-  rgba(215,181,175,.15) 2px,
+  rgba(217,183,177,.15) 2px,
   transparent 2px);
 
-  animation:floating 15s linear infinite;
+  animation:floatingPetals 14s linear infinite;
 
 }
 
-@keyframes floating{
+@keyframes floatingPetals{
 
   from{
 
@@ -81,24 +82,24 @@ body{
 
   to{
 
-    transform:translateY(-60px);
+    transform:translateY(-80px);
 
   }
 
 }
 
-/* HERO */
+/* HERO SCREEN */
 
-.hero-section{
+.hero-screen{
 
   width:100%;
   height:100vh;
 
+  position:relative;
+
   display:flex;
   justify-content:center;
   align-items:center;
-
-  position:relative;
 
   overflow:hidden;
 
@@ -106,25 +107,58 @@ body{
 
 /* FLORALS */
 
-.floral-frame{
+.corner-floral{
 
   position:absolute;
 
-  width:200px;
-  height:200px;
+  width:240px;
+  height:240px;
 
-  opacity:.12;
+  opacity:.18;
 
   background:
   radial-gradient(circle,
   var(--gold) 1px,
   transparent 1px);
 
+  animation:
+  floralFloat 7s ease-in-out infinite alternate;
+
+}
+
+@keyframes floralFloat{
+
+  from{
+
+    transform:translateY(0);
+
+  }
+
+  to{
+
+    transform:translateY(12px);
+
+  }
+
 }
 
 .top-left{
 
   top:0;
+  left:0;
+
+}
+
+.top-right{
+
+  top:0;
+  right:0;
+
+}
+
+.bottom-left{
+
+  bottom:0;
   left:0;
 
 }
@@ -136,14 +170,35 @@ body{
 
 }
 
+/* ROYAL ARCH */
+
+.royal-arch{
+
+  position:absolute;
+
+  width:450px;
+  height:600px;
+
+  border:
+  1px solid rgba(201,166,125,.18);
+
+  border-radius:
+  250px 250px 0 0;
+
+  opacity:.45;
+
+}
+
 /* ENVELOPE */
 
 .envelope-wrapper{
 
   width:92%;
-  max-width:550px;
+  max-width:560px;
 
-  perspective:2000px;
+  perspective:2500px;
+
+  position:relative;
 
   z-index:5;
 
@@ -154,18 +209,18 @@ body{
   position:relative;
 
   width:100%;
-  height:340px;
+  height:360px;
 
   background:
   linear-gradient(145deg,
   #faf5ef,
-  #eadccf);
+  #eadbce);
 
   border:
-  1px solid rgba(200,165,122,.3);
+  1px solid rgba(201,166,125,.28);
 
   box-shadow:
-  0 25px 70px rgba(0,0,0,.18);
+  0 30px 80px rgba(0,0,0,.18);
 
   overflow:hidden;
 
@@ -180,11 +235,11 @@ body{
   inset:14px;
 
   border:
-  1px solid rgba(200,165,122,.25);
+  1px solid rgba(201,166,125,.2);
 
 }
 
-.envelope-body{
+.paper-texture{
 
   position:absolute;
   inset:0;
@@ -195,6 +250,8 @@ body{
   transparent 45%);
 
 }
+
+/* FLAP */
 
 .envelope-flap{
 
@@ -208,8 +265,8 @@ body{
 
   background:
   linear-gradient(145deg,
-  #fbf5ef,
-  #e7d5c8);
+  #fff8f2,
+  #e8d7ca);
 
   clip-path:
   polygon(0 0,
@@ -233,7 +290,7 @@ body{
 
 /* WAX SEAL */
 
-.seal-btn{
+.wax-seal{
 
   position:absolute;
 
@@ -243,16 +300,16 @@ body{
   transform:
   translate(-50%,-50%);
 
-  width:95px;
-  height:95px;
+  width:100px;
+  height:100px;
 
   border:none;
   border-radius:50%;
 
   background:
   radial-gradient(circle at top left,
-  #892432,
-  #5b1119);
+  #8a2432,
+  #5d1018);
 
   color:gold;
 
@@ -266,25 +323,25 @@ body{
   z-index:20;
 
   box-shadow:
-  0 10px 30px rgba(0,0,0,.3);
+  0 15px 35px rgba(0,0,0,.28);
 
-  transition:all .9s ease;
+  transition:all 1s ease;
 
 }
 
-.seal-btn.hide{
+.wax-seal.hide{
 
   opacity:0;
 
   transform:
   translate(-50%,-50%)
-  scale(.3);
+  scale(.2);
 
   pointer-events:none;
 
 }
 
-/* INVITATION PAGE */
+/* FULLSCREEN PAGE */
 
 .invitation-page{
 
@@ -292,8 +349,10 @@ body{
 
   min-height:100vh;
 
+  position:relative;
+
   padding:
-  80px 24px 120px;
+  90px 24px 140px;
 
   opacity:0;
 
@@ -314,13 +373,49 @@ body{
 
 }
 
+/* FULL FLORALS */
+
+.full-floral{
+
+  position:fixed;
+
+  top:0;
+
+  width:180px;
+  height:100vh;
+
+  opacity:.08;
+
+  pointer-events:none;
+
+  z-index:0;
+
+  background:
+  radial-gradient(circle,
+  var(--gold) 1px,
+  transparent 1px);
+
+}
+
+.floral-left{
+
+  left:0;
+
+}
+
+.floral-right{
+
+  right:0;
+
+}
+
 /* BISMILLAH */
 
 .bismillah-section{
 
   text-align:center;
 
-  max-width:850px;
+  max-width:900px;
 
   margin:auto;
 
@@ -328,35 +423,38 @@ body{
 
 .arabic{
 
-  font-size:2.4rem;
+  font-size:2.6rem;
 
   color:var(--gold);
 
   line-height:2;
 
+  animation:
+  fadeUp 2s ease;
+
 }
 
 .translation{
 
-  margin-top:22px;
+  margin-top:20px;
 
   font-size:1rem;
 
   font-family:'Montserrat', sans-serif;
 
-  line-height:1.7;
+  line-height:1.8;
 
 }
 
 .blessing{
 
-  margin-top:16px;
+  margin-top:18px;
 
   font-size:1rem;
 
   font-style:italic;
 
-  color:#846d61;
+  color:#866f63;
 
   line-height:1.8;
 
@@ -364,14 +462,14 @@ body{
 
 /* INVITATION */
 
-.invitation-content{
+.invitation-section{
 
   text-align:center;
 
-  max-width:850px;
+  max-width:900px;
 
   margin:
-  90px auto 0;
+  110px auto 0;
 
 }
 
@@ -398,21 +496,21 @@ body{
 
   font-family:'Cinzel', serif;
 
-  font-size:2.3rem;
+  font-size:2.4rem;
 
-  letter-spacing:4px;
+  letter-spacing:5px;
 
   color:#7b4f4a;
 
-  margin-top:40px;
+  margin-top:42px;
 
 }
 
-.and-symbol{
+.ampersand{
 
   font-family:'Great Vibes', cursive;
 
-  font-size:3.5rem;
+  font-size:4rem;
 
   color:var(--gold);
 
@@ -424,23 +522,23 @@ body{
 
 .event-section{
 
-  margin-top:100px;
+  margin-top:120px;
 
 }
 
 .event-card{
 
-  max-width:600px;
+  max-width:650px;
 
   margin:auto;
 
   text-align:center;
 
   padding:
-  55px 30px;
+  60px 35px;
 
   background:
-  rgba(255,255,255,.35);
+  rgba(255,255,255,.38);
 
   backdrop-filter:
   blur(12px);
@@ -449,23 +547,38 @@ body{
   1px solid rgba(255,255,255,.45);
 
   box-shadow:
-  0 15px 40px rgba(0,0,0,.08);
+  0 20px 45px rgba(0,0,0,.08);
+
+  position:relative;
+
+}
+
+.event-card::before{
+
+  content:'';
+
+  position:absolute;
+
+  inset:15px;
+
+  border:
+  1px solid rgba(201,166,125,.2);
 
 }
 
 .event-day{
 
-  font-size:1.4rem;
-
   color:var(--gold);
+
+  font-size:1.4rem;
 
 }
 
 .event-card h3{
 
-  font-size:2.3rem;
-
   margin-top:15px;
+
+  font-size:2.6rem;
 
 }
 
@@ -479,13 +592,13 @@ body{
 
 .venue{
 
-  margin-top:35px;
+  margin-top:38px;
 
 }
 
 .venue h4{
 
-  font-size:1.8rem;
+  font-size:1.9rem;
 
 }
 
@@ -493,10 +606,10 @@ body{
 
   display:inline-block;
 
-  margin-top:35px;
+  margin-top:38px;
 
   padding:
-  15px 34px;
+  15px 36px;
 
   border:
   1px solid var(--gold);
@@ -523,7 +636,7 @@ body{
 
 .countdown-section{
 
-  margin-top:120px;
+  margin-top:130px;
 
   text-align:center;
 
@@ -531,13 +644,13 @@ body{
 
 .countdown-section h3{
 
-  font-size:2.2rem;
+  font-size:2.4rem;
 
-  margin-bottom:45px;
+  margin-bottom:50px;
 
 }
 
-.countdown{
+.countdown-grid{
 
   display:grid;
 
@@ -546,7 +659,7 @@ body{
 
   gap:18px;
 
-  max-width:600px;
+  max-width:650px;
 
   margin:auto;
 
@@ -555,16 +668,16 @@ body{
 .count-box{
 
   padding:
-  30px 10px;
-
-  border:
-  1px solid rgba(200,165,122,.25);
+  32px 10px;
 
   background:
-  rgba(255,255,255,.4);
+  rgba(255,255,255,.38);
 
   backdrop-filter:
-  blur(12px);
+  blur(10px);
+
+  border:
+  1px solid rgba(201,166,125,.2);
 
 }
 
@@ -572,7 +685,7 @@ body{
 
   display:block;
 
-  font-size:2.3rem;
+  font-size:2.5rem;
 
   color:var(--gold);
 
@@ -586,44 +699,29 @@ body{
 
 }
 
-/* FORMAL */
+/* ENDING */
 
-.formal-section{
-
-  max-width:850px;
-
-  margin:
-  120px auto 0;
+.ending-section{
 
   text-align:center;
 
-}
-
-.formal-section p{
-
-  margin:20px 0;
-
-  font-size:1.3rem;
-
-  line-height:1.9;
-
-  font-style:italic;
+  margin-top:140px;
 
 }
 
-.final-line{
+.ending-section p{
 
-  margin-top:45px !important;
+  font-size:1.6rem;
 
   color:var(--gold);
 
-  font-size:1.4rem !important;
+  line-height:1.9;
 
 }
 
 /* ANIMATIONS */
 
-.fade-up{
+.reveal{
 
   animation:
   fadeUp 2s ease;
@@ -672,20 +770,14 @@ body{
   .bride-name,
   .groom-name{
 
-    font-size:3.4rem;
+    font-size:3.6rem;
 
   }
 
-  .countdown{
+  .countdown-grid{
 
     grid-template-columns:
     repeat(4,1fr);
-
-  }
-
-  .event-card h3{
-
-    font-size:3rem;
 
   }
 
