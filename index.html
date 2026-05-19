@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Meerab & Mohsin | Royal Wedding Invitation</title>
+  <title>Royal Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,41 +12,52 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- PRE OPENING -->
+  <!-- OPENING EXPERIENCE -->
   <section class="opening-screen" id="openingScreen">
 
-    <div class="luxury-light"></div>
-    <div class="luxury-light light2"></div>
+    <div class="light-rays"></div>
+    <div class="light-rays second"></div>
 
-    <div class="floating-petals">
-      <span></span><span></span><span></span><span></span><span></span>
+    <div class="opening-petals">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span>
     </div>
 
-    <div class="envelope-wrapper">
+    <div class="envelope-container">
+
+      <div class="envelope-shadow"></div>
 
       <div class="envelope">
 
-        <div class="envelope-shadow"></div>
-
-        <div class="floral floral-left"></div>
-        <div class="floral floral-right"></div>
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        <div class="corner-ornament bottom-left"></div>
+        <div class="corner-ornament bottom-right"></div>
 
         <div class="envelope-back"></div>
 
+        <div class="invitation-card" id="inviteCard">
+
+          <div class="royal-emblem">✦</div>
+
+          <div class="invite-heading">
+            Wedding Invitation
+          </div>
+
+          <div class="invite-sub">
+            A Royal Celebration
+          </div>
+
+        </div>
+
         <div class="envelope-flap" id="flap"></div>
 
-        <div class="invitation-paper" id="paper">
-          <div class="paper-inner">
-            <p class="mini-text">Royal Wedding Invitation</p>
-            <h2>Meerab & Mohsin</h2>
-          </div>
-        </div>
-
-        <div class="wax-seal" id="seal">
+        <button class="wax-seal" id="seal">
           <span>M & M</span>
-        </div>
+        </button>
 
       </div>
 
@@ -54,29 +65,31 @@
 
   </section>
 
-  <!-- MAIN WEBSITE -->
+  <!-- MAIN EXPERIENCE -->
   <main class="main-site" id="mainSite">
 
-    <!-- LAYERS -->
-    <div class="bg-layer"></div>
-    <div class="texture-layer"></div>
-    <div class="gold-particles"></div>
+    <!-- BACKGROUND LAYERS -->
+    <div class="royal-bg"></div>
+    <div class="texture-overlay"></div>
+    <div class="gold-dust"></div>
     <div class="vignette"></div>
 
-    <!-- FLORAL FRAME -->
-    <div class="floral-frame top-frame"></div>
-    <div class="floral-frame bottom-frame"></div>
-    <div class="floral-frame left-frame"></div>
-    <div class="floral-frame right-frame"></div>
+    <!-- FLORAL STAGE -->
+    <div class="stage stage-top"></div>
+    <div class="stage stage-bottom"></div>
+    <div class="stage stage-left"></div>
+    <div class="stage stage-right"></div>
+
+    <div class="stage-arch"></div>
 
     <!-- PETALS -->
-    <div class="petal-layer">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span>
+    <div class="petal-field">
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
     </div>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero-section">
 
       <div class="hero-content reveal">
 
@@ -92,36 +105,46 @@
           May Allah bless this union with love, mercy, and barakah.
         </div>
 
-        <div class="invite-text">
-          Mr. & Mrs. Nadeem Ahmad Khan <br>
-          cordially invite you to celebrate <br>
+        <div class="invite-copy">
+          Mr. & Mrs. Nadeem Ahmad Khan
+          cordially invite you to celebrate
           the wedding of their beloved daughter
         </div>
 
-        <div class="couple-names">
-          <h1>MEERAB NADEEM</h1>
+        <div class="couple-wrap">
 
-          <div class="and">&</div>
+          <h1 class="hero-name">
+            MEERAB NADEEM
+          </h1>
 
-          <h1>MOHSIN AJMAL KHAN</h1>
+          <div class="ampersand">&</div>
+
+          <h1 class="hero-name">
+            MOHSIN AJMAL KHAN
+          </h1>
+
         </div>
 
       </div>
 
     </section>
 
-    <!-- DATE -->
+    <!-- VENUE -->
     <section class="venue-section reveal">
 
       <div class="venue-card">
 
         <div class="venue-glow"></div>
 
-        <h2>Wedding Celebration</h2>
+        <div class="venue-title">
+          Wedding Celebration
+        </div>
 
-        <div class="date-block">
+        <div class="event-date">
           <span>Friday</span>
-          <h3>5 June 2026</h3>
+
+          <h2>5 June 2026</h2>
+
           <p>8:00 PM</p>
         </div>
 
@@ -129,7 +152,9 @@
           Bambeeno Marriage Hall
         </div>
 
-        <a href="https://maps.app.goo.gl/rPLesYyLEMn6mbzt9" target="_blank" class="location-btn">
+        <a href="https://maps.app.goo.gl/rPLesYyLEMn6mbzt9"
+           target="_blank"
+           class="location-btn">
           View Location
         </a>
 
@@ -140,26 +165,28 @@
     <!-- COUNTDOWN -->
     <section class="countdown-section reveal">
 
-      <h2>Counting Down To Forever</h2>
+      <h2 class="section-title">
+        Counting Down To Forever
+      </h2>
 
-      <div class="countdown">
+      <div class="countdown-grid">
 
-        <div class="time-box">
+        <div class="count-box">
           <span id="days">00</span>
           <small>Days</small>
         </div>
 
-        <div class="time-box">
+        <div class="count-box">
           <span id="hours">00</span>
           <small>Hours</small>
         </div>
 
-        <div class="time-box">
+        <div class="count-box">
           <span id="minutes">00</span>
           <small>Minutes</small>
         </div>
 
-        <div class="time-box">
+        <div class="count-box">
           <span id="seconds">00</span>
           <small>Seconds</small>
         </div>
@@ -173,7 +200,7 @@
 
       <div class="rsvp-card">
 
-        <h2>RSVP</h2>
+        <h2 class="section-title">RSVP</h2>
 
         <form>
 
@@ -206,7 +233,7 @@
     <!-- END -->
     <section class="ending-section reveal">
 
-      <div class="ending-frame">
+      <div class="ending-text">
         Excited to join you in celebrating this special occasion!
       </div>
 
