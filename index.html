@@ -2,90 +2,195 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meerab & Mohsin Wedding Invitation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meerab & Mohsin | Wedding Invitation</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-  <div class="paper-texture"></div>
-  <div class="vignette"></div>
 
+  <div class="background-image"></div>
+  <div class="paper-overlay"></div>
+  <div class="grain"></div>
+  <div class="lighting"></div>
+
+  <!-- OPENING -->
   <section class="opening-screen" id="openingScreen">
-    <div class="botanical-bg botanical-bg-left"></div>
-    <div class="botanical-bg botanical-bg-right"></div>
 
-    <div class="envelope-wrap" id="envelope">
+    <div class="soft-floral floral-left"></div>
+    <div class="soft-floral floral-right"></div>
+
+    <div class="envelope-wrapper" id="envelopeWrapper">
+
       <div class="envelope-shadow"></div>
 
       <div class="envelope">
-        <div class="envelope-flap"></div>
-        <div class="envelope-body">
-          <div class="gold-line"></div>
-          <div class="envelope-floral left-floral"></div>
-          <div class="envelope-floral right-floral"></div>
 
-          <div class="wax-seal">
-            <span>M & M</span>
-          </div>
+        <div class="envelope-back"></div>
+
+        <div class="invitation-paper" id="paper">
+          <div class="mini-border"></div>
+
+          <p class="paper-small">Wedding Invitation</p>
+
+          <h2>Meerab</h2>
+          <span>&</span>
+          <h2>Mohsin</h2>
         </div>
+
+        <div class="envelope-front"></div>
+
+        <div class="envelope-flap" id="flap"></div>
+
+        <button class="wax-seal" id="seal">
+          <span>M & M</span>
+        </button>
+
       </div>
 
-      <p class="open-text">Tap to Open Invitation</p>
+      <p class="tap-text">Tap To Open</p>
+
     </div>
+
   </section>
 
-  <main class="invitation-page" id="invitationPage">
-    <div class="floral-frame floral-top-left"></div>
-    <div class="floral-frame floral-top-right"></div>
-    <div class="floral-frame floral-bottom-left"></div>
-    <div class="floral-frame floral-bottom-right"></div>
+  <!-- MAIN WEBSITE -->
+  <main class="main-site" id="mainSite">
+
+    <div class="dark-bg"></div>
+    <div class="gold-particles"></div>
+
+    <div class="big-floral top-left"></div>
+    <div class="big-floral top-right"></div>
+    <div class="big-floral bottom-left"></div>
+    <div class="big-floral bottom-right"></div>
 
     <div class="floating-petals">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
     </div>
 
-    <section class="invitation-card">
-      <p class="small-title">Together with their families</p>
+    <section class="hero">
 
-      <h1>
-        <span>Meerab Nadeem</span>
-        <em>&</em>
-        <span>Mohsin Ajmal Khan</span>
-      </h1>
+      <div class="arabic">
+        <h3>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h3>
 
-      <div class="divider"></div>
+        <p>In the name of Allah, the Most Gracious, the Most Merciful.</p>
 
-      <p class="invite-text">
-        Request the pleasure of your company as they begin their forever
-        in a celebration of love, elegance, and timeless memories.
-      </p>
-
-      <div class="details">
-        <div>
-          <h3>Date</h3>
-          <p>Sunday, 14 June 2026</p>
-        </div>
-        <div>
-          <h3>Time</h3>
-          <p>7:00 PM Onwards</p>
-        </div>
-        <div>
-          <h3>Venue</h3>
-          <p>Luxury Garden Banquet Hall</p>
-        </div>
+        <span>May Allah bless this union with love, mercy, and barakah.</span>
       </div>
 
-      <button class="rsvp-btn">RSVP With Love</button>
+      <div class="invitation-content">
+
+        <p class="family-text">
+          Mr. & Mrs. Nadeem Ahmad Khan<br>
+          cordially invite you to celebrate<br>
+          the wedding of their beloved daughter
+        </p>
+
+        <div class="couple-names">
+          <h1>Meerab Nadeem</h1>
+          <div class="amp">&</div>
+          <h1>Mohsin Ajmal Khan</h1>
+        </div>
+
+      </div>
+
     </section>
+
+    <!-- DATE -->
+    <section class="venue-card">
+
+      <div class="venue-border"></div>
+
+      <h2>Friday</h2>
+
+      <h3>5 June 2026</h3>
+
+      <p>8:00 PM</p>
+
+      <div class="line"></div>
+
+      <h4>Bambeeno Marriage Hall</h4>
+
+      <a href="https://maps.app.goo.gl/rPLesYyLEMn6mbzt9" target="_blank">
+        View Location
+      </a>
+
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section">
+
+      <h2>Counting Down To Forever</h2>
+
+      <div class="countdown">
+
+        <div class="time-box">
+          <span id="days">00</span>
+          <small>Days</small>
+        </div>
+
+        <div class="time-box">
+          <span id="hours">00</span>
+          <small>Hours</small>
+        </div>
+
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <small>Minutes</small>
+        </div>
+
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <small>Seconds</small>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RSVP -->
+    <section class="rsvp-card">
+
+      <h2>RSVP</h2>
+
+      <form>
+
+        <input type="text" placeholder="Your Name">
+
+        <input type="number" placeholder="Guest Count">
+
+        <select>
+          <option>Will You Attend?</option>
+          <option>Joyfully Attending</option>
+          <option>Regretfully Declining</option>
+        </select>
+
+        <button type="submit">Send Blessings</button>
+
+      </form>
+
+    </section>
+
+    <!-- END -->
+    <section class="ending">
+
+      <h2>
+        Excited to join you in celebrating this special occasion!
+      </h2>
+
+    </section>
+
   </main>
 
   <script src="script.js"></script>
+
 </body>
 </html>
