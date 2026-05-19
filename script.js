@@ -1,69 +1,37 @@
-const seal = document.getElementById("seal");
-const envelopeWrapper = document.getElementById("envelopeWrapper");
+const openBtn = document.getElementById("openInvitation");
 const openingScreen = document.getElementById("openingScreen");
-const mainSite = document.getElementById("mainSite");
+const invitation = document.getElementById("invitation");
 
-seal.addEventListener("click", () => {
+openBtn.addEventListener("click", () => {
 
-  seal.classList.add("hide");
+  openBtn.style.transition = "all 0.8s ease";
+  openBtn.style.transform = "translate(-50%,-30%) scale(0)";
+  openBtn.style.opacity = "0";
 
-  envelopeWrapper.querySelector(".envelope").classList.add("open");
+  document.querySelector(".envelope-top").style.transition = "all 1.8s ease";
+  document.querySelector(".envelope-top").style.transformOrigin = "top";
+  document.querySelector(".envelope-top").style.transform = "rotateX(180deg)";
+
+  document.querySelector(".envelope-paper").style.transition = "all 2s ease";
+  document.querySelector(".envelope-paper").style.transform = "translateY(-120px)";
 
   setTimeout(() => {
 
-    openingScreen.classList.add("hide");
+    openingScreen.style.transition = "opacity 1.5s ease";
+    openingScreen.style.opacity = "0";
 
-    mainSite.classList.add("show");
+    setTimeout(() => {
 
-    document.body.style.overflowY = "auto";
+      openingScreen.style.display = "none";
 
-  }, 2500);
+      invitation.classList.remove("hidden");
 
-});
+      setTimeout(() => {
+        invitation.classList.add("show");
+      }, 100);
 
+    }, 1400);
 
-/* COUNTDOWN */
-
-const targetDate = new Date("June 5, 2026 20:00:00").getTime();
-
-const daysEl = document.getElementById("days");
-const hoursEl = document.getElementById("hours");
-const minutesEl = document.getElementById("minutes");
-const secondsEl = document.getElementById("seconds");
-
-setInterval(() => {
-
-  const now = new Date().getTime();
-
-  const distance = targetDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  daysEl.innerHTML = days;
-  hoursEl.innerHTML = hours;
-  minutesEl.innerHTML = minutes;
-  secondsEl.innerHTML = seconds;
-
-}, 1000);
-
-
-/* PARALLAX */
-
-document.addEventListener("mousemove", e => {
-
-  const x = (e.clientX / window.innerWidth - 0.5) * 20;
-  const y = (e.clientY / window.innerHeight - 0.5) * 20;
-
-  document.querySelectorAll(".big-floral").forEach((el, i) => {
-
-    const depth = (i + 1) * 0.2;
-
-    el.style.transform =
-      `translate(${x * depth}px, ${y * depth}px)`;
-
-  });
+  }, 1500);
 
 });
