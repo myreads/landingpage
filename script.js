@@ -3,74 +3,64 @@ const openingScreen = document.getElementById("openingScreen");
 const mainSite = document.getElementById("mainSite");
 
 seal.addEventListener("click", () => {
-
   document.body.classList.add("open");
 
   setTimeout(() => {
     openingScreen.style.opacity = "0";
-  }, 2600);
+  }, 2700);
 
   setTimeout(() => {
     openingScreen.style.display = "none";
     mainSite.classList.add("main-visible");
-  }, 4200);
-
+    revealOnScroll();
+  }, 4300);
 });
 
 /* COUNTDOWN */
 
 const targetDate = new Date("June 5, 2026 20:00:00").getTime();
 
-const countdown = setInterval(() => {
-
+setInterval(() => {
   const now = new Date().getTime();
-
   const distance = targetDate - now;
 
-  const days = Math.floor(
-    distance / (1000 * 60 * 60 * 24)
-  );
+  const days = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+  const hours = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+  const minutes = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+  const seconds = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
 
-  const hours = Math.floor(
-    (distance % (1000 * 60 * 60 * 24)) /
-    (1000 * 60 * 60)
-  );
-
-  const minutes = Math.floor(
-    (distance % (1000 * 60 * 60)) /
-    (1000 * 60)
-  );
-
-  const seconds = Math.floor(
-    (distance % (1000 * 60)) / 1000
-  );
-
-  document.getElementById("days").innerHTML = days;
-  document.getElementById("hours").innerHTML = hours;
-  document.getElementById("minutes").innerHTML = minutes;
-  document.getElementById("seconds").innerHTML = seconds;
-
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
 }, 1000);
 
-/* SCROLL REVEAL */
+/* REVEAL */
 
 const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
-
-  reveals.forEach((element) => {
-
-    const windowHeight = window.innerHeight;
-
-    const revealTop =
-      element.getBoundingClientRect().top;
-
-    if(revealTop < windowHeight - 100){
-
-      element.classList.add("active");
-
+function revealOnScroll(){
+  reveals.forEach((item) => {
+    const top = item.getBoundingClientRect().top;
+    if(top < window.innerHeight - 90){
+      item.classList.add("active");
     }
-
   });
+}
 
+window.addEventListener("scroll", revealOnScroll);
+
+/* SUBTLE PARALLAX */
+
+window.addEventListener("scroll", () => {
+  const y = window.scrollY;
+
+  document.querySelector(".floral-arch").style.transform =
+    `translateX(-50%) translateY(${y * 0.035}px)`;
+
+  document.querySelector(".floral-top").style.transform =
+    `translateY(${y * 0.025}px)`;
+
+  document.querySelector(".floral-bottom").style.transform =
+    `translateY(${-y * 0.018}px)`;
 });
