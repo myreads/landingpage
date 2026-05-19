@@ -8,12 +8,12 @@ seal.addEventListener("click", () => {
 
   setTimeout(() => {
     openingScreen.style.opacity = "0";
-  }, 2500);
+  }, 2600);
 
   setTimeout(() => {
     openingScreen.style.display = "none";
     mainSite.classList.add("main-visible");
-  }, 4000);
+  }, 4200);
 
 });
 
@@ -27,7 +27,9 @@ const countdown = setInterval(() => {
 
   const distance = targetDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const days = Math.floor(
+    distance / (1000 * 60 * 60 * 24)
+  );
 
   const hours = Math.floor(
     (distance % (1000 * 60 * 60 * 24)) /
@@ -50,7 +52,7 @@ const countdown = setInterval(() => {
 
 }, 1000);
 
-/* REVEAL */
+/* SCROLL REVEAL */
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -59,10 +61,14 @@ window.addEventListener("scroll", () => {
   reveals.forEach((element) => {
 
     const windowHeight = window.innerHeight;
-    const revealTop = element.getBoundingClientRect().top;
+
+    const revealTop =
+      element.getBoundingClientRect().top;
 
     if(revealTop < windowHeight - 100){
+
       element.classList.add("active");
+
     }
 
   });
