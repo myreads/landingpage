@@ -1,103 +1,138 @@
-const envelope = document.getElementById("envelope");
-const openInvite = document.getElementById("openInvite");
-const introScreen = document.getElementById("introScreen");
-const siteContent = document.getElementById("siteContent");
+// script.js
 
-const musicBtn = document.getElementById("musicBtn");
-const bgMusic = document.getElementById("bgMusic");
+// Intro Transition
 
-const particles = document.getElementById("particles");
+setTimeout(() => {
 
-openInvite.addEventListener("click", () => {
-  envelope.classList.add("open");
+  document.getElementById('intro').style.opacity = '0';
 
   setTimeout(() => {
-    introScreen.classList.add("hide");
-  }, 1500);
 
-  setTimeout(() => {
-    introScreen.style.display = "none";
-    siteContent.classList.add("show");
-    window.scrollTo(0, 0);
-    revealSections();
-  }, 2300);
+    document.getElementById('intro').style.display = 'none';
+
+    document.getElementById('envelopeScene').classList.remove('hidden');
+
+  }, 1200);
+
+}, 5000);
+
+
+// Envelope Open
+
+setTimeout(() => {
+
+  document.getElementById('envelope').classList.add('open');
+
+}, 7000);
+
+
+// Countdown
+
+const weddingDate = new Date("June 5, 2026 20:00:00").getTime();
+
+const countdown = setInterval(() => {
+
+  const now = new Date().getTime();
+
+  const distance = weddingDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24))
+    / (1000 * 60 * 60)
+  );
+
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60))
+    / (1000 * 60)
+  );
+
+  const seconds = Math.floor(
+    (distance % (1000 * 60))
+    / 1000
+  );
+
+  document.getElementById('days').innerHTML = days;
+  document.getElementById('hours').innerHTML = hours;
+  document.getElementById('minutes').innerHTML = minutes;
+  document.getElementById('seconds').innerHTML = seconds;
+
+}, 1000);
+
+
+// Scratch Card
+
+const canvas = document.getElementById("scratchCanvas");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+
+  ctx.fillStyle = "#d8c3ae";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.font = "30px Cormorant Garamond";
+  ctx.fillStyle = "#ffffff";
+  ctx.textAlign = "center";
+  ctx.fillText(
+    "Scratch To Reveal",
+    canvas.width / 2,
+    canvas.height / 2
+  );
+}
+
+resizeCanvas();
+
+let isDrawing = false;
+
+function scratch(x, y) {
+
+  ctx.globalCompositeOperation = "destination-out";
+
+  ctx.beginPath();
+
+  ctx.arc(x, y, 25, 0, Math.PI * 2);
+
+  ctx.fill();
+}
+
+canvas.addEventListener("mousedown", () => {
+  isDrawing = true;
 });
 
-musicBtn.addEventListener("click", () => {
-  if (bgMusic.paused) {
-    bgMusic.play();
-    musicBtn.classList.add("playing");
-    musicBtn.innerHTML = "♫";
-  } else {
-    bgMusic.pause();
-    musicBtn.classList.remove("playing");
-    musicBtn.innerHTML = "♪";
-  }
+canvas.addEventListener("mouseup", () => {
+  isDrawing = false;
 });
 
-function createParticles() {
-  for (let i = 0; i < 85; i++) {
-    const p = document.createElement("span");
-    p.className = "particle";
-    p.style.left = Math.random() * 100 + "%";
-    p.style.animationDuration = 8 + Math.random() * 12 + "s";
-    p.style.animationDelay = Math.random() * 8 + "s";
-    p.style.opacity = Math.random();
-    document.body.appendChild(p);
-  }
+canvas.addEventListener("mousemove", (e) => {
 
-  for (let i = 0; i < 24; i++) {
-    const petal = document.createElement("span");
-    petal.className = "petal";
-    petal.innerHTML = "❦";
-    petal.style.left = Math.random() * 100 + "%";
-    petal.style.animationDuration = 10 + Math.random() * 14 + "s";
-    petal.style.animationDelay = Math.random() * 10 + "s";
-    document.body.appendChild(petal);
-  }
-}
+  if (!isDrawing) return;
 
-function countdownTimer() {
-  const weddingDate = new Date("June 5, 2026 20:00:00").getTime();
+  const rect = canvas.getBoundingClientRect();
 
-  setInterval(() => {
-    const now = new Date().getTime();
-    const gap = weddingDate - now;
+  scratch(
+    e.clientX - rect.left,
+    e.clientY - rect.top
+  );
+});
 
-    const second = 1000;
-    const minute = second * 60;
-    const hour = minute * 60;
-    const day = hour * 24;
+// Mobile Support
 
-    document.getElementById("days").innerText = Math.max(0, Math.floor(gap / day));
-    document.getElementById("hours").innerText = Math.max(0, Math.floor((gap % day) / hour));
-    document.getElementById("minutes").innerText = Math.max(0, Math.floor((gap % hour) / minute));
-    document.getElementById("seconds").innerText = Math.max(0, Math.floor((gap % minute) / second));
-  }, 1000);
-}
+canvas.addEventListener("touchmove", (e) => {
 
-function revealSections() {
-  const reveals = document.querySelectorAll(".reveal");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("active");
-      }
-    });
-  }, {
-    threshold: 0.18
-  });
-
-  reveals.forEach(section => observer.observe(section));
-}
-
-document.getElementById("rsvpForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  alert("Thank you. Your RSVP has been received.");
-  this.reset();
+
+  const rect = canvas.getBoundingClientRect();
+
+  const touch = e.touches[0];
+
+  scratch(
+    touch.clientX - rect.left,
+    touch.clientY - rect.top
+  );
+
 });
 
-createParticles();
-countdownTimer();
-revealSections();
+window.addEventListener("resize", resizeCanvas);
