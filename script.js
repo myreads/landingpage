@@ -1,90 +1,70 @@
-const sealBtn = document.getElementById("sealBtn");
-const envelope = document.getElementById("envelope");
+const seal = document.getElementById("seal");
 const openingScreen = document.getElementById("openingScreen");
 const mainSite = document.getElementById("mainSite");
 
-sealBtn.addEventListener("click", () => {
+seal.addEventListener("click", () => {
 
-  sealBtn.classList.add("hide");
-
-  setTimeout(() => {
-    envelope.classList.add("open");
-  }, 500);
+  document.body.classList.add("open");
 
   setTimeout(() => {
-    openingScreen.classList.add("hidden");
-    mainSite.classList.add("show");
-
-    document.body.style.overflowY = "auto";
+    openingScreen.style.opacity = "0";
   }, 2500);
+
+  setTimeout(() => {
+    openingScreen.style.display = "none";
+    mainSite.classList.add("main-visible");
+  }, 4000);
 
 });
 
-/* =========================== */
-/* SCROLL REVEAL */
-/* =========================== */
+/* COUNTDOWN */
+
+const targetDate = new Date("June 5, 2026 20:00:00").getTime();
+
+const countdown = setInterval(() => {
+
+  const now = new Date().getTime();
+
+  const distance = targetDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) /
+    (1000 * 60 * 60)
+  );
+
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60)) /
+    (1000 * 60)
+  );
+
+  const seconds = Math.floor(
+    (distance % (1000 * 60)) / 1000
+  );
+
+  document.getElementById("days").innerHTML = days;
+  document.getElementById("hours").innerHTML = hours;
+  document.getElementById("minutes").innerHTML = minutes;
+  document.getElementById("seconds").innerHTML = seconds;
+
+}, 1000);
+
+/* REVEAL */
 
 const reveals = document.querySelectorAll(".reveal");
 
-const revealOnScroll = () => {
+window.addEventListener("scroll", () => {
 
-  reveals.forEach((el) => {
+  reveals.forEach((element) => {
 
     const windowHeight = window.innerHeight;
-    const top = el.getBoundingClientRect().top;
+    const revealTop = element.getBoundingClientRect().top;
 
-    if(top < windowHeight - 100){
-      el.classList.add("active");
+    if(revealTop < windowHeight - 100){
+      element.classList.add("active");
     }
 
   });
 
-};
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-/* =========================== */
-/* COUNTDOWN */
-/* =========================== */
-
-const weddingDate = new Date("June 5, 2026 20:00:00").getTime();
-
-const countdown = () => {
-
-  const now = new Date().getTime();
-  const gap = weddingDate - now;
-
-  const second = 1000;
-  const minute = second * 60;
-  const hour = minute * 60;
-  const day = hour * 24;
-
-  const d = Math.floor(gap / day);
-  const h = Math.floor((gap % day) / hour);
-  const m = Math.floor((gap % hour) / minute);
-  const s = Math.floor((gap % minute) / second);
-
-  document.getElementById("days").innerText = d;
-  document.getElementById("hours").innerText = h;
-  document.getElementById("minutes").innerText = m;
-  document.getElementById("seconds").innerText = s;
-
-};
-
-setInterval(countdown, 1000);
-countdown();
-
-/* =========================== */
-/* RSVP */
-/* =========================== */
-
-const form = document.querySelector(".rsvp-form");
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  alert("Thank you for your RSVP! ✨");
-
-  form.reset();
 });
