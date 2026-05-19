@@ -1,55 +1,84 @@
-// script.js
+const openBtn = document.getElementById("openInvitation");
+const openingScreen = document.getElementById("openingScreen");
+const mainSite = document.getElementById("mainSite");
+const envelope = document.querySelector(".envelope");
 
-const waxSeal = document.getElementById("waxSeal");
-const envelope = document.getElementById("envelope");
-const invitation = document.getElementById("invitation");
+openBtn.addEventListener("click", () => {
 
-waxSeal.addEventListener("click", () => {
-  waxSeal.classList.add("hide");
-
-  setTimeout(() => {
-    envelope.classList.add("open");
-  }, 350);
+  envelope.classList.add("open");
 
   setTimeout(() => {
-    invitation.classList.add("show");
-
-    window.scrollTo({
-      top: window.innerHeight * 0.68,
-      behavior: "smooth"
-    });
+    openingScreen.classList.add("hide");
+    mainSite.classList.add("active");
+    document.body.style.overflowY = "auto";
   }, 1800);
+
 });
 
-// Countdown
-const weddingDate = new Date("June 5, 2026 20:00:00").getTime();
+/* REVEAL ANIMATION */
 
-setInterval(() => {
+const reveals = document.querySelectorAll(".reveal");
+
+function revealOnScroll() {
+
+  reveals.forEach((el) => {
+
+    const windowHeight = window.innerHeight;
+    const revealTop = el.getBoundingClientRect().top;
+
+    if (revealTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+
+  });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
+
+/* COUNTDOWN */
+
+const targetDate = new Date("June 5, 2026 20:00:00").getTime();
+
+const countdown = () => {
+
   const now = new Date().getTime();
-  const distance = weddingDate - now;
+  const distance = targetDate - now;
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const hours = Math.floor(
+    (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+  );
+
+  const minutes = Math.floor(
+    (distance % (1000 * 60 * 60)) / (1000 * 60)
+  );
+
+  const seconds = Math.floor(
+    (distance % (1000 * 60)) / 1000
+  );
 
   document.getElementById("days").innerText = days;
   document.getElementById("hours").innerText = hours;
   document.getElementById("minutes").innerText = minutes;
   document.getElementById("seconds").innerText = seconds;
-}, 1000);
 
-// Scroll reveal
-const reveals = document.querySelectorAll(".reveal");
+};
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-    }
-  });
-}, {
-  threshold: 0.18
+setInterval(countdown, 1000);
+countdown();
+
+/* RSVP */
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", (e) => {
+
+  e.preventDefault();
+
+  alert("Thank you for your RSVP!");
+
+  form.reset();
+
 });
-
-reveals.forEach(section => observer.observe(section));
