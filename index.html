@@ -7,116 +7,85 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-
-<section class="opening" id="opening">
-  <div class="blush-light"></div>
-  <div class="opening-florals"></div>
-  <div class="petals opening-petals"></div>
-
-  <div class="envelope-scene">
-    <div class="envelope">
-      <div class="invite-paper">
-        <div class="mini-ornament">۞</div>
-        <h2>Wedding Invitation</h2>
-      </div>
-
-      <div class="env-base"></div>
-      <div class="env-flap"></div>
-
-      <button class="seal" id="seal">M & M</button>
-    </div>
-  </div>
-</section>
-
-<main class="cinema" id="cinema">
-
-  <div class="maroon-bg"></div>
-  <div class="gold-noise"></div>
+  <div class="paper-texture"></div>
   <div class="vignette"></div>
 
-  <div class="stage-arch"></div>
-  <div class="top-garland"></div>
-  <div class="left-pillar"></div>
-  <div class="right-pillar"></div>
-  <div class="bottom-florals"></div>
-  <div class="petals main-petals"></div>
+  <section class="opening-screen" id="openingScreen">
+    <div class="botanical-bg botanical-bg-left"></div>
+    <div class="botanical-bg botanical-bg-right"></div>
 
-  <section class="reel-frame hero reveal">
-    <div class="names">
-      <h1>MEERAB NADEEM</h1>
-      <span>&</span>
-      <h1>MOHSIN AJMAL KHAN</h1>
-    </div>
+    <div class="envelope-wrap" id="envelope">
+      <div class="envelope-shadow"></div>
 
-    <div class="bismillah">
-      بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-    </div>
+      <div class="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-body">
+          <div class="gold-line"></div>
+          <div class="envelope-floral left-floral"></div>
+          <div class="envelope-floral right-floral"></div>
 
-    <p>In the name of Allah, the Most Gracious, the Most Merciful.</p>
-    <p class="gold-line">May Allah bless this union with love, mercy, and barakah.</p>
+          <div class="wax-seal">
+            <span>M & M</span>
+          </div>
+        </div>
+      </div>
 
-    <div class="family">
-      Mr. & Mrs. Nadeem Ahmad Khan<br>
-      cordially invite you to celebrate<br>
-      the wedding of their beloved daughter
+      <p class="open-text">Tap to Open Invitation</p>
     </div>
   </section>
 
-  <section class="reel-frame details reveal">
-    <div class="glass-panel">
-      <h2>Wedding Celebration</h2>
-      <h3>Friday</h3>
-      <strong>5 June 2026</strong>
-      <p>8:00 PM</p>
-      <h4>Bambeeno Marriage Hall</h4>
-      <a href="https://maps.app.goo.gl/rPLesYyLEMn6mbzt9" target="_blank">View Location</a>
+  <main class="invitation-page" id="invitationPage">
+    <div class="floral-frame floral-top-left"></div>
+    <div class="floral-frame floral-top-right"></div>
+    <div class="floral-frame floral-bottom-left"></div>
+    <div class="floral-frame floral-bottom-right"></div>
+
+    <div class="floating-petals">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
     </div>
-  </section>
 
-  <section class="reel-frame countdown-wrap reveal">
-    <h2>Counting Down To Forever</h2>
-    <div class="countdown">
-      <div><span id="days">00</span><small>Days</small></div>
-      <div><span id="hours">00</span><small>Hours</small></div>
-      <div><span id="minutes">00</span><small>Minutes</small></div>
-      <div><span id="seconds">00</span><small>Seconds</small></div>
-    </div>
-  </section>
+    <section class="invitation-card">
+      <p class="small-title">Together with their families</p>
 
-  <section class="reel-frame rsvp reveal">
-    <div class="glass-panel">
-      <h2>RSVP</h2>
-      <form>
-        <input type="text" placeholder="Your Name">
-        <select>
-          <option>Guest Count</option>
-          <option>1 Guest</option>
-          <option>2 Guests</option>
-          <option>3 Guests</option>
-          <option>4 Guests</option>
-        </select>
-        <select>
-          <option>Attendance Confirmation</option>
-          <option>Joyfully Attending</option>
-          <option>Regretfully Declined</option>
-        </select>
-        <button type="submit">Send Response</button>
-      </form>
-    </div>
-  </section>
+      <h1>
+        <span>Meerab Nadeem</span>
+        <em>&</em>
+        <span>Mohsin Ajmal Khan</span>
+      </h1>
 
-  <section class="reel-frame final reveal">
-    <h2>Excited to join you in celebrating this special occasion!</h2>
-  </section>
+      <div class="divider"></div>
 
-</main>
+      <p class="invite-text">
+        Request the pleasure of your company as they begin their forever
+        in a celebration of love, elegance, and timeless memories.
+      </p>
 
-<script src="script.js"></script>
+      <div class="details">
+        <div>
+          <h3>Date</h3>
+          <p>Sunday, 14 June 2026</p>
+        </div>
+        <div>
+          <h3>Time</h3>
+          <p>7:00 PM Onwards</p>
+        </div>
+        <div>
+          <h3>Venue</h3>
+          <p>Luxury Garden Banquet Hall</p>
+        </div>
+      </div>
+
+      <button class="rsvp-btn">RSVP With Love</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
