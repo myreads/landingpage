@@ -1,42 +1,58 @@
 // script.js
 
-// Intro Transition
+// INTRO TRANSITION
 
 setTimeout(() => {
 
-  document.getElementById('intro').style.opacity = '0';
+  const intro = document.getElementById('intro');
+
+  intro.style.opacity = '0';
 
   setTimeout(() => {
 
-    document.getElementById('intro').style.display = 'none';
+    intro.style.display = 'none';
 
-    document.getElementById('envelopeScene').classList.remove('hidden');
+    document
+      .getElementById('envelopeScene')
+      .classList
+      .remove('hidden');
 
   }, 1200);
 
-}, 5000);
+}, 4500);
 
 
-// Envelope Open
+// ENVELOPE OPEN
 
-setTimeout(() => {
+const sealBtn = document.getElementById('sealBtn');
 
-  document.getElementById('envelope').classList.add('open');
+sealBtn.addEventListener('click', () => {
 
-}, 7000);
+  sealBtn.classList.add('hide');
+
+  document
+    .getElementById('envelope')
+    .classList
+    .add('open');
+
+});
 
 
-// Countdown
+// COUNTDOWN
 
-const weddingDate = new Date("June 5, 2026 20:00:00").getTime();
+const weddingDate = new Date(
+  "June 5, 2026 20:00:00"
+).getTime();
 
-const countdown = setInterval(() => {
+setInterval(() => {
 
   const now = new Date().getTime();
 
   const distance = weddingDate - now;
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const days = Math.floor(
+    distance / (1000 * 60 * 60 * 24)
+  );
 
   const hours = Math.floor(
     (distance % (1000 * 60 * 60 * 24))
@@ -61,54 +77,70 @@ const countdown = setInterval(() => {
 }, 1000);
 
 
-// Scratch Card
+// SCRATCH CARD
 
-const canvas = document.getElementById("scratchCanvas");
-const ctx = canvas.getContext("2d");
+const canvas = document.getElementById('scratchCanvas');
 
-function resizeCanvas() {
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas(){
+
   canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
 
-  ctx.fillStyle = "#d8c3ae";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "#b98b86";
 
-  ctx.font = "30px Cormorant Garamond";
-  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(
+    0,
+    0,
+    canvas.width,
+    canvas.height
+  );
+
+  ctx.fillStyle = "#fff";
+
+  ctx.font = "28px Cormorant Garamond";
+
   ctx.textAlign = "center";
+
   ctx.fillText(
     "Scratch To Reveal",
     canvas.width / 2,
     canvas.height / 2
   );
+
 }
 
 resizeCanvas();
 
 let isDrawing = false;
 
-function scratch(x, y) {
+function scratch(x,y){
 
-  ctx.globalCompositeOperation = "destination-out";
+  ctx.globalCompositeOperation =
+    "destination-out";
 
   ctx.beginPath();
 
-  ctx.arc(x, y, 25, 0, Math.PI * 2);
+  ctx.arc(x,y,28,0,Math.PI*2);
 
   ctx.fill();
+
 }
 
-canvas.addEventListener("mousedown", () => {
+// DESKTOP
+
+canvas.addEventListener('mousedown', () => {
   isDrawing = true;
 });
 
-canvas.addEventListener("mouseup", () => {
+canvas.addEventListener('mouseup', () => {
   isDrawing = false;
 });
 
-canvas.addEventListener("mousemove", (e) => {
+canvas.addEventListener('mousemove', (e) => {
 
-  if (!isDrawing) return;
+  if(!isDrawing) return;
 
   const rect = canvas.getBoundingClientRect();
 
@@ -116,11 +148,12 @@ canvas.addEventListener("mousemove", (e) => {
     e.clientX - rect.left,
     e.clientY - rect.top
   );
+
 });
 
-// Mobile Support
+// MOBILE
 
-canvas.addEventListener("touchmove", (e) => {
+canvas.addEventListener('touchmove', (e) => {
 
   e.preventDefault();
 
@@ -135,4 +168,4 @@ canvas.addEventListener("touchmove", (e) => {
 
 });
 
-window.addEventListener("resize", resizeCanvas);
+window.addEventListener('resize', resizeCanvas);
