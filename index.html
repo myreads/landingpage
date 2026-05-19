@@ -1,33 +1,35 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Luxury Islamic Wedding Invitation</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-  <!-- Floating Floral Particles -->
-  <div class="particles"></div>
+  <!-- Ambient Floral Particles -->
+  <div class="petals"></div>
 
-  <!-- Intro Screen -->
+  <!-- INTRO -->
   <section class="intro-screen" id="intro">
-    <div class="intro-overlay"></div>
 
     <div class="intro-content">
-      <h1 class="arabic">
+
+      <div class="arabic">
         بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
-      </h1>
+      </div>
 
       <p class="translation">
         In the name of Allah, the Most Gracious, the Most Merciful.
@@ -36,11 +38,16 @@
       <p class="blessing">
         “May Allah bless this union with love, mercy, and barakah.”
       </p>
+
     </div>
+
   </section>
 
-  <!-- Envelope Scene -->
-  <section class="envelope-section hidden" id="envelopeScene">
+  <!-- ENVELOPE -->
+  <section class="envelope-scene hidden" id="envelopeScene">
+
+    <div class="floral-corner floral-top-left"></div>
+    <div class="floral-corner floral-bottom-right"></div>
 
     <div class="envelope-wrapper">
 
@@ -48,111 +55,133 @@
 
         <div class="envelope-flap"></div>
 
-        <div class="wax-seal">
+        <div class="envelope-inner"></div>
+
+        <!-- WAX BUTTON -->
+        <button class="seal-btn" id="sealBtn">
           <span>M & M</span>
-        </div>
+        </button>
 
-        <div class="invitation-card">
+        <!-- INVITATION CARD -->
+        <div class="invitation-card" id="card">
 
-          <div class="card-inner">
+          <div class="card-content">
 
-            <div class="floral-top"></div>
+            <div class="mini-floral"></div>
 
             <p class="hosting">
               Mr. & Mrs. Nadeem Ahmad Khan
             </p>
 
-            <p class="invite-line">
+            <p class="invite-text">
               cordially invite you to celebrate
               the wedding of their beloved daughter
             </p>
 
-            <h2 class="bride-name">MEERAB NADEEM</h2>
+            <h1 class="bride">
+              MEERAB NADEEM
+            </h1>
 
-            <div class="and">&</div>
+            <div class="ampersand">&</div>
 
-            <h2 class="groom-name">MOHSIN AJMAL KHAN</h2>
+            <h1 class="groom">
+              MOHSIN AJMAL KHAN
+            </h1>
 
-            <!-- Scratch Card -->
-            <div class="scratch-wrapper">
-              <h3>Reveal Event Details</h3>
+            <!-- SCRATCH -->
+            <section class="scratch-section">
 
-              <div class="scratch-container">
+              <h2>Reveal Event Details</h2>
+
+              <div class="scratch-card">
 
                 <div class="scratch-content">
+
                   <p>Friday</p>
-                  <h4>5 June 2026</h4>
+
+                  <h3>5 June 2026</h3>
+
                   <p>8:00 PM</p>
 
                   <div class="venue">
-                    <h5>Pearl Grand Marquee</h5>
+                    <h4>Pearl Grand Marquee</h4>
                     <span>Karachi, Pakistan</span>
                   </div>
+
                 </div>
 
                 <canvas id="scratchCanvas"></canvas>
 
               </div>
-            </div>
 
-            <!-- Map -->
-            <div class="map-section">
-              <div class="map-box">
+            </section>
+
+            <!-- MAP -->
+            <section class="map-section">
+
+              <div class="map-frame">
+
                 <iframe
-                  src="https://maps.google.com/maps?q=karachi&t=&z=13&ie=UTF8&iwloc=&output=embed">
+                  src="https://maps.google.com/maps?q=Pearl%20Grand%20Marquee%20Karachi&t=&z=13&ie=UTF8&iwloc=&output=embed">
                 </iframe>
+
               </div>
 
-              <a class="map-btn"
-                 href="https://maps.google.com/?q=Karachi"
-                 target="_blank">
-                 Open Location
-              </a>
-            </div>
+              <a
+                href="https://maps.google.com/?q=Pearl Grand Marquee Karachi"
+                target="_blank"
+                class="map-btn">
 
-            <!-- Countdown -->
+                Open Location
+
+              </a>
+
+            </section>
+
+            <!-- COUNTDOWN -->
             <section class="countdown-section">
 
-              <h3>Wedding Countdown</h3>
+              <h2>Wedding Countdown</h2>
 
               <div class="countdown">
 
                 <div class="count-box">
                   <span id="days">00</span>
-                  <small>Days</small>
+                  <small>DAYS</small>
                 </div>
 
                 <div class="count-box">
                   <span id="hours">00</span>
-                  <small>Hours</small>
+                  <small>HOURS</small>
                 </div>
 
                 <div class="count-box">
                   <span id="minutes">00</span>
-                  <small>Minutes</small>
+                  <small>MINUTES</small>
                 </div>
 
                 <div class="count-box">
                   <span id="seconds">00</span>
-                  <small>Seconds</small>
+                  <small>SECONDS</small>
                 </div>
 
               </div>
+
             </section>
 
-            <!-- Formal Text -->
+            <!-- FORMAL TEXT -->
             <section class="formal-text">
 
               <p>
-                Your presence will make this celebration truly memorable.
+                “Your gracious presence will make our celebration truly memorable.”
               </p>
 
               <p>
-                With joyful hearts, we await your gracious presence.
+                “With joyful hearts, we await your presence on this beautiful occasion.”
               </p>
 
               <p>
-                Dinner and reception to follow.
+                “Dinner and reception to follow.”
               </p>
 
             </section>
@@ -160,17 +189,17 @@
             <!-- RSVP -->
             <section class="rsvp-section">
 
-              <h3>RSVP</h3>
+              <h2>RSVP</h2>
 
               <form class="rsvp-form">
 
-                <input type="text" placeholder="Your Name" required />
+                <input type="text" placeholder="Your Name">
 
-                <input type="number" placeholder="Number of Guests" />
+                <input type="number" placeholder="Guest Count">
 
                 <select>
                   <option>Will Attend</option>
-                  <option>Unable to Attend</option>
+                  <option>Unable To Attend</option>
                 </select>
 
                 <button type="submit">
