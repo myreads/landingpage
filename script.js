@@ -1,7 +1,7 @@
 // script.js
 
-const sealBtn =
-document.getElementById('sealBtn');
+const waxSeal =
+document.getElementById('waxSeal');
 
 const envelope =
 document.getElementById('envelope');
@@ -10,13 +10,13 @@ const invitationPage =
 document.getElementById('invitationPage');
 
 
-// OPEN ENVELOPE
+// OPEN ENVELOPE EXPERIENCE
 
-sealBtn.addEventListener('click', () => {
+waxSeal.addEventListener('click', () => {
 
-  // HIDE STAMP
+  // HIDE SEAL COMPLETELY
 
-  sealBtn.classList.add('hide');
+  waxSeal.classList.add('hide');
 
   // OPEN ENVELOPE
 
@@ -26,13 +26,11 @@ sealBtn.addEventListener('click', () => {
 
   }, 300);
 
-  // SHOW FULL PAGE
+  // SHOW FULLSCREEN PAGE
 
   setTimeout(() => {
 
     invitationPage.classList.add('show');
-
-    // SCROLL DOWN SMOOTHLY
 
     window.scrollTo({
 
