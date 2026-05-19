@@ -1,107 +1,188 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M & M Wedding Invitation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Royal Wedding Invitation</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-  <div class="gold-dust"></div>
+  <!-- FLOATING PETALS -->
   <div class="petals"></div>
 
-  <section class="envelope-screen" id="envelopeScreen">
+  <!-- OPENING SCREEN -->
+  <section class="opening-screen" id="openingScreen">
 
-    <div class="royal-bg-frame"></div>
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
 
-    <div class="envelope" id="envelope">
-      <div class="envelope-flap"></div>
-      <div class="envelope-texture"></div>
+    <div class="envelope-wrapper">
 
-      <button class="wax-seal" id="waxSeal">
-        <span>M & M</span>
-      </button>
+      <div class="envelope">
+
+        <div class="envelope-top"></div>
+
+        <div class="invitation-paper">
+          <div class="paper-border"></div>
+          <div class="paper-ornament">✦</div>
+        </div>
+
+        <button class="wax-seal" id="openInvitation">
+          <span>M & M</span>
+        </button>
+
+      </div>
+
     </div>
 
   </section>
 
-  <main class="invitation" id="invitation">
+  <!-- MAIN WEBSITE -->
+  <main class="main-site" id="mainSite">
 
-    <div class="floral-img top-floral"></div>
-    <div class="floral-img bottom-floral"></div>
-    <div class="floral-side left-side"></div>
-    <div class="floral-side right-side"></div>
+    <!-- Floral Decor -->
+    <div class="floral floral-top-left"></div>
+    <div class="floral floral-top-right"></div>
+    <div class="floral floral-bottom-left"></div>
+    <div class="floral floral-bottom-right"></div>
 
-    <div class="gold-arch"></div>
+    <div class="vines vines-left"></div>
+    <div class="vines vines-right"></div>
 
-    <section class="section bismillah reveal">
-      <h1>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
-      <p>In the name of Allah, the Most Gracious, the Most Merciful.</p>
-      <span>May Allah bless this union with love, mercy, and barakah.</span>
-    </section>
+    <!-- HERO -->
+    <section class="hero section">
 
-    <section class="section names reveal">
-      <p class="host">Mr. & Mrs. Nadeem Ahmad Khan</p>
-      <p class="invite-text">
-        cordially invite you to celebrate<br>
-        the wedding of their beloved daughter
-      </p>
+      <div class="luxury-frame"></div>
 
-      <h2>MEERAB NADEEM</h2>
-      <div class="amp">&</div>
-      <h2>MOHSIN AJMAL KHAN</h2>
-    </section>
+      <div class="arabic-section reveal">
+        <h1>بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
 
-    <section class="section event-card reveal">
-      <p class="day">Friday</p>
-      <h3>5 June 2026</h3>
-      <p class="time">8:00 PM</p>
+        <p>In the name of Allah, the Most Gracious, the Most Merciful.</p>
 
-      <div class="venue">
-        <span>Venue</span>
-        <h4>Bambeeno Marriage Hall</h4>
+        <span>May Allah bless this union with love, mercy, and barakah.</span>
       </div>
 
-      <a href="https://maps.app.goo.gl/rPLesYyLEMn6mbzt9" target="_blank">
-        📍 Open Location
-      </a>
-    </section>
+      <div class="divider reveal"></div>
 
-    <section class="section countdown reveal">
-      <h3>Wedding Countdown</h3>
-
-      <div class="count-grid">
-        <div><strong id="days">00</strong><span>Days</span></div>
-        <div><strong id="hours">00</strong><span>Hours</span></div>
-        <div><strong id="minutes">00</strong><span>Minutes</span></div>
-        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      <div class="invite-text reveal">
+        <p>
+          Mr. & Mrs. Nadeem Ahmad Khan <br>
+          cordially invite you to celebrate <br>
+          the wedding of their beloved daughter
+        </p>
       </div>
+
+      <div class="bride-groom reveal">
+        <h2>MEERAB NADEEM</h2>
+
+        <div class="with">with</div>
+
+        <h3>MOHSIN AJMAL KHAN</h3>
+      </div>
+
     </section>
 
-    <section class="section rsvp reveal">
-      <h3>RSVP</h3>
+    <!-- DATE SECTION -->
+    <section class="event-section section reveal">
 
-      <form>
-        <input type="text" placeholder="Your Name">
-        <input type="number" placeholder="Guest Count">
+      <div class="ornament">❦</div>
 
-        <select>
-          <option>Will Attend</option>
-          <option>Unable to Attend</option>
-        </select>
+      <div class="event-card">
 
-        <button type="submit">Confirm Attendance</button>
-      </form>
+        <h4>Friday</h4>
+        <h2>5 June 2026</h2>
+        <h3>8:00 PM</h3>
+
+        <div class="venue">
+          <span>Venue</span>
+          <h5>Bambeeno Marriage Hall</h5>
+        </div>
+
+        <a href="https://maps.app.goo.gl/rPLesYyLEMn6mbzt9" target="_blank" class="location-btn">
+          📍 View Location
+        </a>
+
+      </div>
+
     </section>
 
-    <section class="section ending reveal">
-      <p>Excited to join you in celebrating this special occasion!</p>
+    <!-- COUNTDOWN -->
+    <section class="countdown-section section reveal">
+
+      <h2>Wedding Countdown</h2>
+
+      <div class="countdown">
+
+        <div class="time-box">
+          <span id="days">00</span>
+          <p>Days</p>
+        </div>
+
+        <div class="time-box">
+          <span id="hours">00</span>
+          <p>Hours</p>
+        </div>
+
+        <div class="time-box">
+          <span id="minutes">00</span>
+          <p>Minutes</p>
+        </div>
+
+        <div class="time-box">
+          <span id="seconds">00</span>
+          <p>Seconds</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- RSVP -->
+    <section class="rsvp-section section reveal">
+
+      <div class="rsvp-card">
+
+        <h2>RSVP</h2>
+
+        <form>
+
+          <div class="input-group">
+            <input type="text" placeholder="Your Name" required>
+          </div>
+
+          <div class="input-group">
+            <input type="number" placeholder="Guest Count" required>
+          </div>
+
+          <div class="input-group">
+            <select>
+              <option>Will Attend</option>
+              <option>Unable to Attend</option>
+            </select>
+          </div>
+
+          <button type="submit">Send Response</button>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- ENDING -->
+    <section class="ending section reveal">
+
+      <div class="ending-box">
+        “Excited to join you in celebrating this special occasion!”
+      </div>
+
     </section>
 
   </main>
