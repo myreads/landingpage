@@ -1,16 +1,19 @@
 const sealBtn = document.getElementById('sealBtn');
 
-const openingScreen = document.getElementById('openingScreen');
+const openingScreen =
+document.getElementById('openingScreen');
 
-const mainSite = document.getElementById('mainSite');
+const mainSite =
+document.getElementById('mainSite');
 
-const flap = document.querySelector('.flap');
+const flap =
+document.querySelector('.flap');
 
-/* CLICK ENVELOPE */
+/* ENVELOPE OPENING */
 
 sealBtn.addEventListener('click', () => {
 
-    /* HIDE SEAL */
+    /* SEAL DISAPPEAR */
 
     sealBtn.style.opacity = "0";
 
@@ -39,3 +42,47 @@ sealBtn.addEventListener('click', () => {
     }, 2300);
 
 });
+
+/* COUNTDOWN */
+
+const weddingDate =
+new Date("June 5, 2026 20:00:00").getTime();
+
+function updateCountdown(){
+
+const now = new Date().getTime();
+
+const gap = weddingDate - now;
+
+const second = 1000;
+const minute = second * 60;
+const hour = minute * 60;
+const day = hour * 24;
+
+const d = Math.floor(gap / day);
+
+const h = Math.floor(
+(gap % day) / hour
+);
+
+const m = Math.floor(
+(gap % hour) / minute
+);
+
+const s = Math.floor(
+(gap % minute) / second
+);
+
+document.getElementById("days").innerText = d;
+
+document.getElementById("hours").innerText = h;
+
+document.getElementById("minutes").innerText = m;
+
+document.getElementById("seconds").innerText = s;
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
