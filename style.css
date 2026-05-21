@@ -109,7 +109,7 @@ color:#7b4b55;
 font-size:14px;
 }
 
-/* WAX SEAL */
+/* SEAL */
 
 .seal{
 position:absolute;
@@ -148,7 +148,7 @@ box-shadow:
 transition:1s ease;
 }
 
-/* MAIN WEBSITE */
+/* MAIN SITE */
 
 .main-site{
 position:relative;
@@ -179,8 +179,6 @@ background-size:cover;
 background-position:center;
 }
 
-/* SHOW WEBSITE */
-
 .main-site.show{
 opacity:1;
 visibility:visible;
@@ -190,81 +188,49 @@ visibility:visible;
 
 .top-flowers{
 position:absolute;
-
 top:0;
 left:50%;
-
 transform:translateX(-50%);
-
 width:100%;
 max-width:1400px;
-
 opacity:.95;
-
-pointer-events:none;
-
 z-index:2;
-
 animation:floatFlowers 7s ease-in-out infinite;
 }
 
 .bottom-flowers{
 position:absolute;
-
 bottom:0;
 left:50%;
-
 transform:translateX(-50%);
-
 width:100%;
 max-width:1400px;
-
 opacity:.95;
-
-pointer-events:none;
-
 z-index:2;
-
 animation:floatFlowers 7s ease-in-out infinite;
 }
 
 .left-flowers{
 position:absolute;
-
 left:-40px;
 top:50%;
-
 transform:translateY(-50%);
-
 height:100%;
 max-height:1100px;
-
 opacity:.95;
-
-pointer-events:none;
-
 z-index:2;
-
 animation:sideFloat 8s ease-in-out infinite;
 }
 
 .right-flowers{
 position:absolute;
-
 right:-40px;
 top:50%;
-
 transform:translateY(-50%);
-
 height:100%;
 max-height:1100px;
-
 opacity:.95;
-
-pointer-events:none;
-
 z-index:2;
-
 animation:sideFloat 8s ease-in-out infinite;
 }
 
@@ -272,15 +238,10 @@ animation:sideFloat 8s ease-in-out infinite;
 
 .content{
 position:relative;
-
 z-index:10;
-
-max-width:900px;
-
+max-width:950px;
 text-align:center;
-
 color:#f3d7a3;
-
 animation:fadeUp 2.5s ease;
 }
 
@@ -288,44 +249,38 @@ animation:fadeUp 2.5s ease;
 
 .arabic{
 font-size:clamp(2rem,5vw,4rem);
-
 line-height:1.8;
 }
 
 /* BLESSING */
 
 .blessing{
-margin-top:20px;
-
+margin-top:15px;
 font-size:1.2rem;
-
 color:#f0dfbb;
 }
 
-/* HOSTING TEXT */
+/* HOSTING */
 
 .hosting{
 margin-top:60px;
-
-font-size:1.4rem;
-
-line-height:1.8;
-
-color:#e8d6b2;
+font-size:1.5rem;
+line-height:1.9;
+color:#ead6af;
 }
 
 /* NAMES */
 
 .names{
-margin-top:60px;
+margin-top:70px;
 
 font-family:'Cinzel', serif;
 
-font-size:clamp(3rem,10vw,7rem);
+font-size:clamp(3rem,9vw,6rem);
 
-line-height:1.2;
+line-height:1.3;
 
-letter-spacing:8px;
+letter-spacing:5px;
 
 background:
 linear-gradient(
@@ -341,7 +296,7 @@ to bottom,
 .names span{
 display:block;
 
-margin:18px 0;
+margin:25px 0;
 
 font-family:'Great Vibes', cursive;
 
@@ -360,15 +315,16 @@ margin-top:70px;
 
 .details h2{
 font-size:2rem;
-
 letter-spacing:2px;
 }
 
+.venue-time{
+margin-top:20px !important;
+}
+
 .details p{
-margin-top:14px;
-
+margin-top:10px;
 font-size:1.4rem;
-
 color:#ead6af;
 }
 
@@ -388,66 +344,27 @@ text-decoration:none;
 
 color:#f3d7a3;
 
-backdrop-filter:blur(8px);
-
 background:
 rgba(255,255,255,.05);
+
+backdrop-filter:blur(8px);
 
 transition:.4s ease;
 }
 
 .details a:hover{
 transform:translateY(-4px);
-
-background:
-rgba(255,255,255,.12);
+background:rgba(255,255,255,.12);
 }
 
-/* CINEMATIC OVERLAY */
+/* SECTION TITLES */
 
-.main-site::before{
-content:'';
+.section-title{
+margin-top:100px;
 
-position:absolute;
-
-inset:0;
-
-background:
-radial-gradient(
-circle at center,
-transparent 40%,
-rgba(0,0,0,.45)
-);
-
-pointer-events:none;
-
-z-index:1;
-}
-
-/* COUNTDOWN SECTION */
-
-.countdown-section{
-position:relative;
-
-z-index:10;
-
-padding:120px 20px;
-
-text-align:center;
-
-background:
-linear-gradient(
-rgba(18,5,8,.92),
-rgba(25,8,14,.95)
-);
-}
-
-/* COUNTDOWN TITLE */
-
-.count-title{
 font-family:'Cinzel', serif;
 
-font-size:clamp(2rem,6vw,4rem);
+font-size:clamp(2rem,5vw,3rem);
 
 letter-spacing:4px;
 
@@ -462,7 +379,101 @@ to bottom,
 -webkit-text-fill-color:transparent;
 }
 
-/* COUNTDOWN GRID */
+/* TIMELINE */
+
+.timeline-box{
+margin-top:50px;
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+}
+
+.event{
+padding:40px 20px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(8px);
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.25);
+}
+
+.event h3{
+font-size:1.5rem;
+color:#f5d9a7;
+}
+
+.event p{
+margin-top:15px;
+font-size:1.3rem;
+color:#ead6af;
+}
+
+/* RSVP */
+
+.rsvp-form{
+margin-top:50px;
+
+display:flex;
+flex-direction:column;
+
+gap:20px;
+}
+
+.rsvp-form input,
+.rsvp-form select{
+padding:18px;
+
+background:
+rgba(255,255,255,.06);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+color:#fff;
+
+font-size:1rem;
+
+outline:none;
+
+backdrop-filter:blur(8px);
+}
+
+.rsvp-form button{
+padding:18px;
+
+border:none;
+
+background:
+linear-gradient(
+145deg,
+#d4aa5a,
+#a7792c
+);
+
+color:#fff;
+
+font-size:1rem;
+
+cursor:pointer;
+
+transition:.4s ease;
+}
+
+.rsvp-form button:hover{
+transform:translateY(-4px);
+}
+
+/* COUNTDOWN */
 
 .countdown{
 margin-top:60px;
@@ -473,13 +484,7 @@ grid-template-columns:
 repeat(4,1fr);
 
 gap:25px;
-
-max-width:1000px;
-
-margin-inline:auto;
 }
-
-/* COUNT BOX */
 
 .count-box{
 padding:40px 20px;
@@ -496,8 +501,6 @@ box-shadow:
 0 20px 40px rgba(0,0,0,.25);
 }
 
-/* NUMBER */
-
 .count-box span{
 font-size:clamp(2.5rem,6vw,4rem);
 
@@ -506,16 +509,49 @@ font-family:'Cinzel', serif;
 color:#f5d9a7;
 }
 
-/* LABEL */
-
 .count-box p{
 margin-top:15px;
-
 letter-spacing:3px;
-
-font-size:1rem;
-
 color:#ead7b3;
+}
+
+/* ENDING */
+
+.ending-line{
+margin-top:120px;
+padding-bottom:80px;
+}
+
+.ending-line p{
+font-size:1.5rem;
+line-height:1.8;
+color:#ead7b3;
+}
+
+.final-line{
+margin-top:25px;
+font-family:'Great Vibes', cursive;
+font-size:3rem !important;
+color:#f5d9a7 !important;
+}
+
+/* OVERLAY */
+
+.main-site::before{
+content:'';
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(
+circle at center,
+transparent 40%,
+rgba(0,0,0,.45)
+);
+
+pointer-events:none;
+z-index:1;
 }
 
 /* ANIMATIONS */
@@ -582,7 +618,7 @@ height:auto;
 }
 
 .names{
-letter-spacing:4px;
+letter-spacing:2px;
 }
 
 .hosting{
@@ -593,9 +629,17 @@ font-size:1.2rem;
 font-size:1.5rem;
 }
 
+.timeline-box{
+grid-template-columns:1fr;
+}
+
 .countdown{
 grid-template-columns:
 repeat(2,1fr);
+}
+
+.final-line{
+font-size:2.2rem !important;
 }
 
 }
