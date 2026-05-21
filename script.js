@@ -9,11 +9,11 @@ document.getElementById('mainSite');
 const flap =
 document.querySelector('.flap');
 
-/* ENVELOPE OPENING */
+/* ENVELOPE OPEN */
 
 sealBtn.addEventListener('click', () => {
 
-    /* SEAL DISAPPEAR */
+    /* HIDE SEAL */
 
     sealBtn.style.opacity = "0";
 
@@ -46,7 +46,7 @@ sealBtn.addEventListener('click', () => {
 /* COUNTDOWN */
 
 const weddingDate =
-new Date("June 5, 2026 20:00:00").getTime();
+new Date("June 05, 2026 20:00:00").getTime();
 
 function updateCountdown(){
 
@@ -74,11 +74,8 @@ const s = Math.floor(
 );
 
 document.getElementById("days").innerText = d;
-
 document.getElementById("hours").innerText = h;
-
 document.getElementById("minutes").innerText = m;
-
 document.getElementById("seconds").innerText = s;
 
 }
@@ -86,3 +83,20 @@ document.getElementById("seconds").innerText = s;
 setInterval(updateCountdown,1000);
 
 updateCountdown();
+
+/* RSVP */
+
+const rsvpForm =
+document.querySelector('.rsvp-form');
+
+rsvpForm.addEventListener('submit',(e)=>{
+
+e.preventDefault();
+
+alert(
+'Thank you for your response. We look forward to celebrating with you.'
+);
+
+rsvpForm.reset();
+
+});
